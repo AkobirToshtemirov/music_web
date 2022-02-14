@@ -14,6 +14,10 @@
 </head>
 <body>
 
+    <audio class="audioTag"></audio>
+
+    <input id="range" type="range">
+
     <div class="mainBlock">
         <div class="container">
             <div class="menu">
@@ -21,24 +25,40 @@
 
                 </div>
                 <div class="menuBar">
-
+                    
                 </div>
             </div>
 
-            <div class="control">
-                <div class="controBar">
-                    <div class="btnControl">
-                        <div><i class="fa-solid fa-backward"></i></div>
-                        <div><i class="fa-solid fa-play"></i></div>
-                        <div><i class="fa-solid fa-forward"></i></div>
-                    </div>
+            <div class="bottomBlock">
+                <div class="music_duration">
+                    <div class="music_time"></div>
                 </div>
-                <div class="controBar">
-                    <div class="btnSound">
-                        <div><i class="fa-solid fa-shuffle"></i></div>
-                        <div><i class="fa-solid fa-repeat"></i></div>
-                        <div><i class="fa-solid fa-repeat"></i></div>
-                        <div><i class="sound_icon fa-solid fa-volume-high"></i></div>
+
+                <div class="control">
+                    <div class="controBar">
+                        <div class="btnControl">
+                            <div><i class="fa-solid fa-backward"></i></div>
+                            <div><i class="fa-solid fa-play"></i></div>
+                            <div><i class="fa-solid fa-forward"></i></div>
+                        </div>
+                    </div>
+                    <div class="controBar">
+                        <div class="btnSound">
+                            <div><i class="fa-solid fa-shuffle"></i></div>
+                            <div><i class="fa-solid fa-repeat"></i></div>
+                            <div><i class="fa-solid fa-repeat"></i></div>
+                            <div style="position: relative;">
+                                <i class="sound_icon fa-solid fa-volume-high"></i>
+                                <div class="volumeBox">
+                                    <div class="volumeIcon">
+    
+                                    </div>
+                                    <div class="progress">
+                                        <label for="range"></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
