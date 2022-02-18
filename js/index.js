@@ -9,8 +9,9 @@ let music_time = document.querySelector('.music_time')
 let musics = [ 'Adam', 'Billie Eilish & Khalid', 'Bruno Mars', 'Davina Michelle', 'Doston Ergashev', 'Ed Sheeran', `G'aybulla Tursunov`, 'Justin' ]
 
 let music_name = [
-    `hello`,
-    'next'
+    `Davay ne boley`,
+    `Lovely`,
+    ``
 ]
 
 
