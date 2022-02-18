@@ -93,7 +93,7 @@
     color: rgb(0, 0, 0);
 }
 
-.fa-play {
+.fa-play, .fa-pause {
     font-size: 33px !important;
 }
 
