@@ -204,6 +204,78 @@
     font-size: 15px;
 }
 
+.volumeBtn {
+    position: relative;
+    padding: 3px;
+}
+
+.volumeBox {
+    position: absolute;
+    top: -130px;
+    left: -85px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    box-shadow: 0 0 15px rgba(145, 117, 117, 0.616);
+    cursor: pointer;
+    transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+    padding: 7px 15px;
+    visibility: hidden;
+    transition: 0.3s ease;
+    -webkit-transition: 0.3s ease;
+    -moz-transition: 0.3s ease;
+    -ms-transition: 0.3s ease;
+    -o-transition: 0.3s ease;
+}
+
+.volumeBox::after {
+    content: '';
+    width: 10px;
+    height: 10px;
+    background-color: #fff;
+    position: absolute;
+    left: -5px;
+    transform: rotate(-140deg);
+    -webkit-transform: rotate(-140deg);
+    -moz-transform: rotate(-140deg);
+    -ms-transform: rotate(-140deg);
+    -o-transform: rotate(-140deg);
+}
+
+.volumeIcon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.volumes {
+    cursor: pointer;
+}
+
+.subtitr {
+    margin-left: 10px;
+}
+
+.volumeBtn:hover > .volumeBox {
+    visibility: visible;
+    transform: rotate(-90deg) translateX(30px);
+    -webkit-transform: rotate(-90deg) translateX(30px);
+    -moz-transform: rotate(-90deg) translateX(30px);
+    -ms-transform: rotate(-90deg) translateX(30px);
+    -o-transform: rotate(-90deg) translateX(30px);
+    transition: 0.3s ease;
+    -webkit-transition: 0.3s ease;
+    -moz-transition: 0.3s ease;
+    -ms-transition: 0.3s ease;
+    -o-transition: 0.3s ease;
+}
+
+
 @media screen and (max-width:1200px) {
     .container {
         width: 100%;

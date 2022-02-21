@@ -5,6 +5,7 @@ let play = document.querySelector('.fa-play')
 let next = document.querySelector('.fa-forward')
 let music_duration = document.querySelector('.music_duration')
 let music_time = document.querySelector('.music_time')
+let sound_icon = document.querySelector('.sound_icon')
 
 let musicPhoto = document.querySelector('.musicPhoto')
 let artistName = document.querySelector('.artistName')
@@ -112,7 +113,7 @@ function updateProgress(e) {
             clearInterval(inter)
         }
 
-        let timeOfMusic =  document.querySelector('.time').innerHTML = `${minut} : ${secund}`
+        document.querySelector('.time').innerHTML = `${minut} : ${secund}`
     }
 }
 
@@ -126,6 +127,10 @@ function setProgress(e) {
 
 volumes.addEventListener('input', () => {
     audioTag.volume = volumes.value
+
+    if(volumes.value > 0.5) {
+        
+    }
 })
 
 audioTag.addEventListener('timeupdate', updateProgress)
@@ -165,3 +170,18 @@ for(let j = 0; j < musics.length; j++) {
 
 let numLarge = document.querySelectorAll('.number')
 numLarge[9].classList.add('large')
+
+sound_icon.addEventListener('click', () => {
+    sound_icon.classList.toggle('fa-volume-xmark')
+
+    if(sound_icon.classList.contains('fa-volume-xmark')) {
+        audioTag.volume = 0
+        volumes.value = 0
+    } else {
+        audioTag.volume = volumes.value
+        volumes.value = 0.5
+    }
+    
+})
+
+
