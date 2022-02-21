@@ -9,7 +9,7 @@ let music_time = document.querySelector('.music_time')
 let musicPhoto = document.querySelector('.musicPhoto')
 let artistName = document.querySelector('.artistName')
 let musicNames = document.querySelector('.musicNames')
-let range =document.querySelector('#range')
+let volumes =document.querySelector('.volumes')
 
 let musics = [ 'Adam', 'Billie Eilish & Khalid', 'Bruno Mars', 'Doston Ergashev', 'Ed Sheeran', `G'aybulla Tursunov`, 'Justin', `Justin Bieber`, `Ad Aka Dilovar`, `Julius Dreisig` ]
 
@@ -25,6 +25,8 @@ let music_name = [
     `Davaye`,
     'Swalla'
 ]
+
+let numOfMusics = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
 let music_photo = [
     `https://is5-ssl.mzstatic.com/image/thumb/Music116/v4/f5/ca/e7/f5cae795-1d81-f47c-259a-ccab629e3692/cover.jpg/1200x1200bf-60.jpg`,
@@ -95,8 +97,8 @@ prev.addEventListener('click', prevSong)
 
 function updateProgress(e) {
     const {duration, currentTime} = e.srcElement
-    console.log('duration: ', duration);
-    console.log('currentTime ', currentTime);
+    // console.log('duration: ', duration);
+    // console.log('currentTime ', currentTime);
     const progressPercent = (currentTime / duration) * 100;
     music_time.style.width = `${progressPercent}%`
     audioTag.onloadeddata = function() {
@@ -110,7 +112,7 @@ function updateProgress(e) {
             clearInterval(inter)
         }
 
-        document.querySelector('music_duration span').innerHTML = `${minut} : ${secund}`
+        let timeOfMusic =  document.querySelector('.time').innerHTML = `${minut} : ${secund}`
     }
 }
 
@@ -122,11 +124,37 @@ function setProgress(e) {
     audioTag.currentTime = (clickX / width) * duration
 }
 
-range.addEventListener('input', () => {
-    audio.volume = range.value
+volumes.addEventListener('input', () => {
+    audioTag.volume = volumes.value
 })
 
 audioTag.addEventListener('timeupdate', updateProgress)
 
 music_duration.addEventListener('click', setProgress)
 audioTag.addEventListener('ended', nextSong)
+
+for(let j = 0; j < musics.length; j++) {
+
+    let box = document.createElement('div')
+    box.classList.add('homeOfMusic')
+    let number = document.createElement('h4')
+    number.classList.add('number')
+    number.innerText = numOfMusics[j]
+    box.appendChild(number)
+    let img = document.createElement('img')
+    img.setAttribute('src', music_photo[j])
+    box.appendChild(img)
+    let textBlock  = document.createElement('div')
+    box.appendChild(textBlock)
+    let name = document.createElement('h3')
+    name.innerText = music_name[j]
+    textBlock.appendChild(name)
+    let actor = document.createElement('p')
+    actor.innerText = musics[j]
+    textBlock.appendChild(actor)
+
+    let control = document.createElement('div')
+    
+    box.appendChild(control)
+    menuBar[1].appendChild(box)
+}
