@@ -145,6 +145,7 @@ for(let j = 0; j < musics.length; j++) {
     img.setAttribute('src', music_photo[j])
     box.appendChild(img)
     let textBlock  = document.createElement('div')
+    textBlock.classList.add('textBlock')
     box.appendChild(textBlock)
     let name = document.createElement('h3')
     name.innerText = music_name[j]
@@ -152,9 +153,15 @@ for(let j = 0; j < musics.length; j++) {
     let actor = document.createElement('p')
     actor.innerText = musics[j]
     textBlock.appendChild(actor)
-
     let control = document.createElement('div')
+    control.classList.add('likeControl')
+    control.innerHTML = `
+
+    `
     
     box.appendChild(control)
     menuBar[1].appendChild(box)
 }
+
+let numLarge = document.querySelectorAll('.number')
+numLarge[9].classList.add('large')

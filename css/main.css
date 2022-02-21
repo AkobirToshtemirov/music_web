@@ -163,19 +163,45 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 10px;
-    border: 1px solid red;
- 
+    padding: 5px !important;
+    cursor: pointer;
+    border: 2px solid transparent;
+}
+
+.homeOfMusic:hover {
+    border-color: rgb(255, 217, 0);
+}
+
+.homeOfMusic .number {
+    margin-right: 7px;
+    font-size: 17px;
+}
+
+.large {
+    margin-left: -12px !important;
 }
 
 .homeOfMusic img {
     width: 55px;
     height: 55px;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
 }
 
 .number {
     font-size: 22px;
     font-weight: 500;
+}
+
+.textBlock h3 {
+    font-size: 17px;
+}
+
+.textBlock p {
+    font-size: 15px;
 }
 
 @media screen and (max-width:1200px) {
