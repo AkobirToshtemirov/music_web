@@ -202,4 +202,19 @@ for(let j = 0; j < musics.length; j++) {
 let numLarge = document.querySelectorAll('.number')
 numLarge[9].classList.add('large')
 
+let box_homeOfMusic = document.querySelectorAll('.homeOfMusic')
+
+box_homeOfMusic.forEach((item, index) => {
+    item.addEventListener('click', () => {
+        item.classList.toggle('stopping')
+        audioTag.setAttribute('src', `./music/${musics[index]}.mp3`)
+        playMusic()
+
+        if(item.classList.contains('stopping')) {
+            playMusic()
+        } else {
+           stopMusic()
+        }
+    })
+})
 

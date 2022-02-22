@@ -179,7 +179,7 @@
 }
 
 .large {
-    margin-left: -12px !important;
+    margin-left: -10px !important;
 }
 
 .homeOfMusic img {
@@ -311,5 +311,10 @@
 
     .musicsBox {
         margin-bottom: 40px;
+    }
+
+    .textBlock {
+        padding: 0;
+        padding-left: 10px !important;
     }
 }
