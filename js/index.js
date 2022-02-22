@@ -157,7 +157,7 @@ sound_icon.addEventListener('click', () => {
         volumes.value = 0
         audioTag.volume = volumes.value
     } else {
-        volumes.value = 0.5
+        volumes.value = 0.7
         audioTag.volume = volumes.value
     
     }
