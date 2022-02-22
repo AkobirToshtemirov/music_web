@@ -125,12 +125,43 @@ function setProgress(e) {
     audioTag.currentTime = (clickX / width) * duration
 }
 
+
+// let xmark = document.querySelector('.fa-volume-xmark')
+// xmark.addEventListener('click', () => {
+//     volumes.value = 0.5
+//      audioTag.volume = volumes.value
+// })
+
 volumes.addEventListener('input', () => {
     audioTag.volume = volumes.value
 
-    if(volumes.value > 0.5) {
-        
+    if(volumes.value <= 0.5) {
+        sound_icon.classList.remove('fa-volume-high')
+        sound_icon.classList.add('fa-volume-low')
+    } else {
+        sound_icon.classList.add('fa-volume-high')
+        sound_icon.classList.remove('fa-volume-low')
+    } 
+})
+
+if(volumes.value === 0) {
+    sound_icon.classList.add('fa-volume-xmark')
+} else {
+    sound_icon.classList.remove('fa-volume-xmark')
+}
+
+sound_icon.addEventListener('click', () => {
+    sound_icon.classList.toggle('fa-volume-xmark')
+ 
+    if(sound_icon.classList.contains('fa-volume-xmark')) {
+        volumes.value = 0
+        audioTag.volume = volumes.value
+    } else {
+        volumes.value = 0.5
+        audioTag.volume = volumes.value
+    
     }
+    
 })
 
 audioTag.addEventListener('timeupdate', updateProgress)
@@ -170,18 +201,5 @@ for(let j = 0; j < musics.length; j++) {
 
 let numLarge = document.querySelectorAll('.number')
 numLarge[9].classList.add('large')
-
-sound_icon.addEventListener('click', () => {
-    sound_icon.classList.toggle('fa-volume-xmark')
-
-    if(sound_icon.classList.contains('fa-volume-xmark')) {
-        audioTag.volume = 0
-        volumes.value = 0
-    } else {
-        audioTag.volume = volumes.value
-        volumes.value = 0.5
-    }
-    
-})
 
 
