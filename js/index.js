@@ -71,7 +71,7 @@ function updateProgress(e) {
         }
 
         document.querySelector('.time').innerHTML = `${minut} : ${secund}`
-        
+
     }
 }
 
@@ -163,7 +163,7 @@ for(let j = 0; j < musics.length; j++) {
     box.appendChild(control)
     menuBar[1].appendChild(box)
 
-
+  
 
 
 }
