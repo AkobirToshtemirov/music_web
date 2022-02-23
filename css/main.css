@@ -37,10 +37,15 @@
     position: relative;
 }
 
-.menu div{
+.menu > div{
     width: 50%;
     height: 100%;
     padding: 10px;
+}
+
+.numberAndImg {
+    display: flex;
+    align-items: center;
 }
 
 .menuBar:nth-of-type(2) > div {
@@ -192,9 +197,17 @@
     -o-border-radius: 3px;
 }
 
+.like {
+    width: 30px !important;
+}
+
 .number {
     font-size: 22px;
     font-weight: 500;
+}
+
+.textBlock {
+    padding-left: 10px;
 }
 
 .textBlock h3 {
@@ -276,6 +289,10 @@
     -o-transition: 0.3s ease;
 }
 
+.redBorder {
+    border-color: red;
+}
+
 
 @media screen and (max-width:1200px) {
 
@@ -311,10 +328,5 @@
 
     .musicsBox {
         margin-bottom: 40px;
-    }
-
-    .textBlock {
-        padding: 0;
-        padding-left: 10px !important;
     }
 }
