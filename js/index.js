@@ -27,7 +27,6 @@ let music_name = [
     'Swalla'
 ]
 
-let numOfMusics = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
 let music_photo = [
     `https://is5-ssl.mzstatic.com/image/thumb/Music116/v4/f5/ca/e7/f5cae795-1d81-f47c-259a-ccab629e3692/cover.jpg/1200x1200bf-60.jpg`,
@@ -53,48 +52,6 @@ function loadSong(songs) {
     musicNames.innerText = music_name[songNum]
 }
 
-function playMusic() {
-    play.classList.remove('fa-play')
-    play.classList.add('fa-pause')
-    audioTag.play()
-}
-
-function stopMusic() {
-    play.classList.add('fa-play')
-    play.classList.remove('fa-pause')
-    audioTag.pause()
-}
-
-function nextSong() {
-    songNum++
-    if(songNum > musics.length - 1) {
-        songNum = 0
-    }
-
-    loadSong(musics[songNum])
-    playMusic()
-}
-
-function prevSong() {
-    songNum--
-    if(songNum < 0) {
-        songNum = musics.length - 1
-    }
-
-    loadSong(musics[songNum])
-    playMusic()
-}
-
-play.addEventListener('click', () => {
-    if(play.classList.contains('fa-play')) {
-        playMusic()
-    }else {
-        stopMusic()
-    }
-})
-
-next.addEventListener('click', nextSong)
-prev.addEventListener('click', prevSong)
 
 function updateProgress(e) {
     const {duration, currentTime} = e.srcElement
@@ -114,6 +71,7 @@ function updateProgress(e) {
         }
 
         document.querySelector('.time').innerHTML = `${minut} : ${secund}`
+        
     }
 }
 
@@ -173,12 +131,13 @@ for(let j = 0; j < musics.length; j++) {
 
     let box = document.createElement('div')
     box.classList.add('homeOfMusic')
+    box.setAttribute('data-id', j+1 )
     let numberAndImg = document.createElement('div')
     box.appendChild(numberAndImg)
     numberAndImg.classList.add('numberAndImg')
     let number = document.createElement('h4')
     number.classList.add('number')
-    number.innerText = numOfMusics[j]
+    number.innerText = j+1
     numberAndImg.appendChild(number)
     let img = document.createElement('img')
     img.setAttribute('src', music_photo[j])
@@ -198,41 +157,84 @@ for(let j = 0; j < musics.length; j++) {
     like.setAttribute('src', `https://wisperwindoxas.github.io/sneaker/img/heart-unliked.svg`)
     like.classList.add('like')
     control.appendChild(like)
-    let sounds = document.createElement('img')
+    let sounds = document.createElement('div')
     sounds.classList.add('sounds')
     control.appendChild(sounds)
     box.appendChild(control)
     menuBar[1].appendChild(box)
+
+
+
+
 }
+
+
 
 let numLarge = document.querySelectorAll('.number')
 numLarge[9].classList.add('large')
 
 let box_homeOfMusic = document.querySelectorAll('.numberAndImg')
+let soundAnim = document.querySelectorAll('.sounds')
+let homeOfMusic = document.querySelectorAll('.homeOfMusic')
 
+function cleanTree() {
+    soundAnim.forEach(item => {
+        item.classList.remove('soundBg')
+    })
+    soundAnim[songNum].classList.add('soundBg')
+}
 box_homeOfMusic.forEach((item, index) => {
+
+    
+
     item.addEventListener('click', () => {
-        item.classList.toggle('stopping')
+        // if(item.classList.contains('sounds')){
+        //     item.classList.remove('sounds')
+        //     item.classList.add('stopping')
+        //     playMusic()
+        //     soundAnim[index].setAttribute('src', 'none')
+
+        // }else{
+        //     item.classList.remove('stopping')
+        //     item.classList.add('sounds')
+        //     stopMusic()
+        //     soundAnim[index].setAttribute('src', `https://m.media-amazon.com/images/G/01/digital/music/player/web/sixteen_frame_equalizer_accent.gif`)
+           
+        // }
+
+       
+       
+
+
+        item.classList.add('stopping')
         audioTag.setAttribute('src', `./music/${musics[index]}.mp3`)
+        songNum = index
         playMusic()
         artistName.innerText = musics[index]
         musicPhoto.setAttribute('src', music_photo[index])
         musicNames.innerText = music_name[index]
         
-        let soundAnim = document.querySelectorAll('.sounds')
+    
         // soundAnim.forEach(item => {
         //     item.setAttribute('src', `https://m.media-amazon.com/images/G/01/digital/music/player/web/sixteen_frame_equalizer_accent.gif`)
         // })
+       
 
+        homeOfMusic[index].addEventListener('click', function() {
+            
+            cleanTree()
+           
 
-        if(item.classList.contains('stopping')) {
-            playMusic()
-            soundAnim[index].setAttribute('src', `https://m.media-amazon.com/images/G/01/digital/music/player/web/sixteen_frame_equalizer_accent.gif`)
-    
-        } else {
-           stopMusic()
-           soundAnim[index].setAttribute('src', ``)
-        }
+            if(this.getAttribute('data-id') == songNum+1){
+                
+                soundAnim[songNum].classList.add('soundBg')
+                playMusic()
+
+            }
+           
+        })
+       
+
     })
 })
 
@@ -260,3 +262,48 @@ if(songNum.valueOf() === box_homeOfMusic.valueOf()) {
     console.log(sounds);
 }
 
+function playMusic() {
+    play.classList.remove('fa-play')
+    play.classList.add('fa-pause')
+    audioTag.play()
+}
+
+function stopMusic() {
+    play.classList.add('fa-play')
+    play.classList.remove('fa-pause')
+    audioTag.pause()
+}
+
+function nextSong() {
+    songNum++
+    if(songNum > musics.length - 1) {
+        songNum = 0
+    }
+    cleanTree()
+    
+    loadSong(musics[songNum])
+    playMusic()
+
+}
+
+function prevSong() {
+    
+    songNum--
+    if(songNum < 0) {
+        songNum = musics.length - 1
+    }
+    cleanTree()
+    loadSong(musics[songNum])
+    playMusic()
+}
+
+play.addEventListener('click', () => {
+    if(play.classList.contains('fa-play')) {
+        playMusic()
+    }else {
+        stopMusic()
+    }
+})
+
+next.addEventListener('click', nextSong)
+prev.addEventListener('click', prevSong)
