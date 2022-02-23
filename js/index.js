@@ -231,7 +231,7 @@ box_homeOfMusic.forEach((item, index) => {
     
         } else {
            stopMusic()
-           soundAnim[index].at
+           soundAnim[index].setAttribute('src', ``)
         }
     })
 })
