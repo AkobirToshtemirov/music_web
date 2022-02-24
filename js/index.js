@@ -12,7 +12,7 @@ let artistName = document.querySelector('.artistName')
 let musicNames = document.querySelector('.musicNames')
 let volumes =document.querySelector('.volumes')
 
-let musics = [ 'Adam', 'Billie Eilish & Khalid', 'Bruno Mars', 'Doston Ergashev', 'Ed Sheeran', `G'aybulla Tursunov`, 'Justin', `Justin Bieber`, `Ad Aka Dilovar`, `Julius Dreisig` ]
+let musics = [ 'Shaman', 'Billie Eilish & Khalid', 'Bruno Mars', 'Doston Ergashev', 'Ed Sheeran', `G'aybulla Tursunov`, 'Justin', `Justin Bieber`, `Ad Aka Dilovar`, `Julius Dreisig` ]
 
 let music_name = [
     `Davay ne boley`,
