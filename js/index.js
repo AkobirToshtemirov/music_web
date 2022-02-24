@@ -12,7 +12,7 @@ let artistName = document.querySelector('.artistName')
 let musicNames = document.querySelector('.musicNames')
 let volumes =document.querySelector('.volumes')
 
-let musics = [ 'Shaman', 'Billie Eilish & Khalid', 'Bruno Mars', 'Doston Ergashev', 'Ed Sheeran', `G'aybulla Tursunov`, 'Justin', `Justin Bieber`, `Ad Aka Dilovar`, `Julius Dreisig` ]
+let musics = [ 'Adam', 'Billie Eilish & Khalid', 'Bruno Mars', 'Doston Ergashev', 'Ed Sheeran', `G'aybulla Tursunov`, 'Justin', `Justin Bieber`, `Ad Aka Dilovar`, `Julius Dreisig`, `Shaman`,  `Shaman_`, `_Shaman_`, `_Shaman`, `Soul & Ruslan` ]
 
 let music_name = [
     `Davay ne boley`,
@@ -24,7 +24,12 @@ let music_name = [
     `Justin Lovely`,
     'Stay',
     `Davaye`,
-    'Swalla'
+    'Swalla',
+    `ТЕРЯЕМ МЫ ЛЮБОВЬ`,
+    `ТАЯЛИ`,
+    `РОДНАЯ`,
+    `ЛЁД`,
+    `Добрый Я`
 ]
 
 
@@ -38,7 +43,12 @@ let music_photo = [
     `https://img.youtube.com/vi/IjNTuBgOkz0/hqdefault.jpg  `,
     `https://m.media-amazon.com/images/I/81lWGt6TTpS._SS500_.jpg`,
     `https://i.ytimg.com/vi/md65GIQ9Cu8/maxresdefault.jpg`,
-    `https://cdns-images.dzcdn.net/images/cover/0f70934b35efe1af954f2ab8ada803ff/500x500.jpg`
+    `https://cdns-images.dzcdn.net/images/cover/0f70934b35efe1af954f2ab8ada803ff/500x500.jpg`,
+    `https://sun9-18.userapi.com/DCX7xPHU42kVEi7hFQ1ukRqLczvhD2ExK389fg/oMBEAtETqL8.jpg`,
+    `https://sun9-14.userapi.com/ijN25S2dBcwKMnLXNL3dLSOrbqIfWCAhKEh8eA/zwUx_Q-_r_Q.jpg`,
+    `https://pishugramotno.ru/wp-content/uploads/2020/03/rodnaya.jpg`,
+    `https://sun9-68.userapi.com/c857320/v857320269/206ffa/qNxqhpFJ9zs.jpg`,
+    `https://is3-ssl.mzstatic.com/image/thumb/Music115/v4/7a/fd/a4/7afda47f-11a5-a6aa-33ed-0fadf856c213/cover.jpg/375x375bb.jpg`
 ]
 
 let songNum = 0;
@@ -138,6 +148,9 @@ for(let j = 0; j < musics.length; j++) {
     let number = document.createElement('h4')
     number.classList.add('number')
     number.innerText = j+1
+    if(number.textContent > 9) {
+        number.classList.add('large')
+    }
     numberAndImg.appendChild(number)
     let img = document.createElement('img')
     img.setAttribute('src', music_photo[j])
@@ -163,15 +176,14 @@ for(let j = 0; j < musics.length; j++) {
     box.appendChild(control)
     menuBar[1].appendChild(box)
 
-  
 
 
 }
 
 
 
-let numLarge = document.querySelectorAll('.number')
-numLarge[9].classList.add('large')
+// let numLarge = document.querySelectorAll('.number')
+// numLarge[9].classList.add('large')
 
 let box_homeOfMusic = document.querySelectorAll('.numberAndImg')
 let soundAnim = document.querySelectorAll('.sounds')
