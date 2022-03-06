@@ -12,7 +12,7 @@ let artistName = document.querySelector('.artistName')
 let musicNames = document.querySelector('.musicNames')
 let volumes =document.querySelector('.volumes')
 
-let musics = [ 'Adam', 'Billie Eilish & Khalid', 'Bruno Mars', 'Doston Ergashev', 'Ed Sheeran', `G'aybulla Tursunov`, 'Justin', `Justin Bieber`, `Ad Aka Dilovar`, `Julius Dreisig`, `Shaman`,  `Shaman_`, `_Shaman_`, `_Shaman`, `Soul & Ruslan` ]
+let musics = [ 'Adam', 'Billie Eilish & Khalid', 'Bruno Mars', 'Doston Ergashev', 'Ed Sheeran', `G'aybulla Tursunov`, 'Justin', `Justin Bieber`, `Ad Aka Dilovar`, `Julius Dreisig`, `Shaman`,  `Shaman_`, `_Shaman_`, `_Shaman`, `Soul & Ruslan`, `DJ SOHA`, `La Romi Pa Tu Consu`, `Aleksandr Ribak`, `Remix 2021`, `Elmurod Ziyayev`, `Uzmir & Mira`, `Remix_2021` ]
 
 let music_name = [
     `Davay ne boley`,
@@ -29,7 +29,14 @@ let music_name = [
     `ТАЯЛИ`,
     `РОДНАЯ`,
     `ЛЁД`,
-    `Добрый Я`
+    `Добрый Я`,
+    `GASOLINA REMIX`,
+    `GASOLINA Tik Tok Version`,
+    `FAIRYTALE`,
+    `FAIRYTALE Remix`,
+    `Daydi Yillar`,
+    `Poralab`,
+    `Babel (slow)`
 ]
 
 
@@ -48,7 +55,14 @@ let music_photo = [
     `https://sun9-14.userapi.com/ijN25S2dBcwKMnLXNL3dLSOrbqIfWCAhKEh8eA/zwUx_Q-_r_Q.jpg`,
     `https://pishugramotno.ru/wp-content/uploads/2020/03/rodnaya.jpg`,
     `https://sun9-68.userapi.com/c857320/v857320269/206ffa/qNxqhpFJ9zs.jpg`,
-    `https://is3-ssl.mzstatic.com/image/thumb/Music115/v4/7a/fd/a4/7afda47f-11a5-a6aa-33ed-0fadf856c213/cover.jpg/375x375bb.jpg`
+    `https://is3-ssl.mzstatic.com/image/thumb/Music115/v4/7a/fd/a4/7afda47f-11a5-a6aa-33ed-0fadf856c213/cover.jpg/375x375bb.jpg`,
+    `https://i.ytimg.com/vi/YGGkeqojP1E/maxresdefault.jpg`,
+    `https://i.scdn.co/image/ab67616d0000b273691a35e2bcfbbdbd5dad2e86`,
+    `https://upload.wikimedia.org/wikipedia/ru/4/4f/Alexander_Rybak_-_Fairytales_%28album%29.jpg`,
+    `https://sound-fun.online/uploads/posts/2021-06/60c825c423a3a.png`,
+    `https://muzfm.tv/uploads/singers/photos/elmurod-ziyoyev-800x800.jpg`,
+    `https://i.ytimg.com/vi/6w2cLEZSLYI/maxresdefault.jpg`,
+    `https://i.ytimg.com/vi/d6MuCVXdoEs/maxresdefault.jpg`
 ]
 
 let songNum = 0;
