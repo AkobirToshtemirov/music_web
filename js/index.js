@@ -6,11 +6,11 @@ let next = document.querySelector('.fa-forward')
 let music_duration = document.querySelector('.music_duration')
 let music_time = document.querySelector('.music_time')
 let sound_icon = document.querySelector('.sound_icon')
-
 let musicPhoto = document.querySelector('.musicPhoto')
 let artistName = document.querySelector('.artistName')
 let musicNames = document.querySelector('.musicNames')
 let volumes =document.querySelector('.volumes')
+let imgEff = document.querySelector('.img-effects')
 
 let musics = [ 'Adam', 'Billie Eilish & Khalid', 'Bruno Mars', 'Doston Ergashev', 'Ed Sheeran', `G'aybulla Tursunov`, 'Justin', `Justin Bieber`, `Ad Aka Dilovar`, `Julius Dreisig`, `Shaman`,  `Shaman_`, `_Shaman_`, `_Shaman`, `Soul & Ruslan`, `DJ SOHA`, `La Romi Pa Tu Consu`, `Aleksandr Ribak`, `Remix 2021`, `Elmurod Ziyayev`, `Uzmir & Mira`, `Remix_2021` ]
 
@@ -202,12 +202,19 @@ for(let j = 0; j < musics.length; j++) {
 let box_homeOfMusic = document.querySelectorAll('.numberAndImg')
 let soundAnim = document.querySelectorAll('.sounds')
 let homeOfMusic = document.querySelectorAll('.homeOfMusic')
+let imgRotate = document.querySelectorAll('.numberAndImg img')
 
 function cleanTree() {
     soundAnim.forEach(item => {
         item.classList.remove('soundBg')
     })
     soundAnim[songNum].classList.add('soundBg')
+
+    imgRotate.forEach(item => {
+        item.classList.remove('rotateMusic')
+    })
+
+    imgRotate[songNum].classList.add('rotateMusic')
 }
 box_homeOfMusic.forEach((item, index) => {
 
@@ -226,11 +233,7 @@ box_homeOfMusic.forEach((item, index) => {
         //     stopMusic()
         //     soundAnim[index].setAttribute('src', `https://m.media-amazon.com/images/G/01/digital/music/player/web/sixteen_frame_equalizer_accent.gif`)
            
-        // }
-
-       
-       
-
+        // }  
 
         item.classList.add('stopping')
         audioTag.setAttribute('src', `./music/${musics[index]}.mp3`)
@@ -240,22 +243,19 @@ box_homeOfMusic.forEach((item, index) => {
         musicPhoto.setAttribute('src', music_photo[index])
         musicNames.innerText = music_name[index]
         
-    
         // soundAnim.forEach(item => {
         //     item.setAttribute('src', `https://m.media-amazon.com/images/G/01/digital/music/player/web/sixteen_frame_equalizer_accent.gif`)
         // })
        
 
         homeOfMusic[index].addEventListener('click', function() {
-            
-            cleanTree()
-           
+            cleanTree()       
 
             if(this.getAttribute('data-id') == songNum+1){
                 
                 soundAnim[songNum].classList.add('soundBg')
+                imgRotate[songNum].classList.add('rotateMusic')
                 playMusic()
-
             }
            
         })
@@ -292,12 +292,14 @@ function playMusic() {
     play.classList.remove('fa-play')
     play.classList.add('fa-pause')
     audioTag.play()
+    imgEff.classList.add('musicEffect')
 }
 
 function stopMusic() {
     play.classList.add('fa-play')
     play.classList.remove('fa-pause')
     audioTag.pause()
+    musicPhoto.classList.remove('musicEffect')
 }
 
 function nextSong() {
