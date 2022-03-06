@@ -3,6 +3,8 @@
     margin: 0;
     box-sizing: border-box;
     font-family: sans-serif;
+    color: #fff;
+    background-color: #151a22;
 }
 
 .mainBlock {
@@ -16,7 +18,6 @@
     height: 100%;
     margin: 0 auto;
     padding: 50px;
-    border: 1px solid red;
     position: relative;
 }
 
@@ -33,7 +34,6 @@
     align-items: flex-start;
     justify-content: space-between;
     height: 550px;
-    border: 2px solid red;
     position: relative;
 }
 
@@ -150,12 +150,13 @@
     margin: 20px 0;
     font-size: 35px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+    color: #ffbb51;
 }
 
 .musicNames {
     font-size: 20px;
     font-weight: 600;
-    color: rgb(0, 17, 255);
+    color: rgb(232, 250, 129);
     margin-bottom: 15px;
 }
 
@@ -209,7 +210,7 @@
 }
 
 .btnControl > div > i:hover {
-    color: rgb(0, 0, 0);
+    color: #ffbb51;
 }
 
 .fa-play, .fa-pause {
@@ -244,7 +245,7 @@
 }
 
 .btnSound > div > i:hover {
-    color: rgb(0, 0, 0);
+    color: #ffbb51;
 }
 
 .homeOfMusic {
@@ -295,6 +296,7 @@
 
 .textBlock h3 {
     font-size: 17px;
+    color: #ffbb51;
 }
 
 .textBlock p {
@@ -314,7 +316,7 @@
     align-items: center;
     justify-content: center;
     background-color: #fff;
-    box-shadow: 0 0 15px rgba(145, 117, 117, 0.616);
+    box-shadow: 0 0 15px #ffbb51;
     cursor: pointer;
     transform: rotate(-90deg);
     -webkit-transform: rotate(-90deg);
@@ -348,6 +350,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: #fff;
 }
 
 .volumes {
@@ -356,6 +359,7 @@
 
 .subtitr {
     margin-left: 10px;
+    background-color: #fff;
 }
 
 .volumeBtn:hover > .volumeBox {
