@@ -415,5 +415,6 @@
         margin-bottom: 40px;
         border: 1px solid #ffbb51;
         box-shadow: 0 0 10px #ffbc51ef;
+        padding: 10px 0 !important;
     }
 }
