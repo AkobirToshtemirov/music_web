@@ -300,7 +300,7 @@ function stopMusic() {
     play.classList.add('fa-play')
     play.classList.remove('fa-pause')
     audioTag.pause()
-    musicPhoto.classList.remove('musicEffect')
+    imgEff.classList.remove('musicEffect')
     imgRotate[songNum].classList.add('StoprotateMusic')
     soundAnim[songNum].classList.remove('soundBg')
 }
