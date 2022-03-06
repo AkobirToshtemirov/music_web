@@ -293,6 +293,7 @@ function playMusic() {
     play.classList.add('fa-pause')
     audioTag.play()
     imgEff.classList.add('musicEffect')
+    imgRotate[songNum].classList.remove('StoprotateMusic')
 }
 
 function stopMusic() {
@@ -300,6 +301,8 @@ function stopMusic() {
     play.classList.remove('fa-pause')
     audioTag.pause()
     musicPhoto.classList.remove('musicEffect')
+    imgRotate[songNum].classList.add('StoprotateMusic')
+    soundAnim[songNum].classList.remove('soundBg')
 }
 
 function nextSong() {

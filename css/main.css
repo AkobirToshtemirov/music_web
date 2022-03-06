@@ -135,6 +135,10 @@
     border-radius: 100% !important;
 }
 
+.StoprotateMusic {
+    animation: none !important;
+}
+
 @keyframes rotate {
     100% {
         transform: rotate(360deg);
