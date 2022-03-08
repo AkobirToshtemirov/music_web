@@ -12,7 +12,7 @@ let musicNames = document.querySelector('.musicNames')
 let volumes =document.querySelector('.volumes')
 let imgEff = document.querySelector('.img-effects')
 
-let musics = [ 'Adam', 'Billie Eilish & Khalid', 'Bruno Mars', 'Doston Ergashev', 'Ed Sheeran', `G'aybulla Tursunov`, 'Justin', `Justin Bieber`, `Ad Aka Dilovar`, `Julius Dreisig`, `Shaman`,  `Shaman_`, `_Shaman_`, `_Shaman`, `Soul & Ruslan`, `DJ SOHA`, `La Romi Pa Tu Consu`, `Aleksandr Ribak`, `Remix 2021`, `Elmurod Ziyayev`, `Uzmir & Mira`, `Remix_2021` ]
+let musics = [ 'Adam', 'Billie Eilish & Khalid', 'Bruno Mars', 'Doston Ergashev', 'Ed Sheeran', `G'aybulla Tursunov`, 'Justin', `Justin Bieber`, `Ad Aka Dilovar`, `Julius Dreisig`, `Shaman`,  `Shaman_`, `_Shaman_`, `_Shaman`, `Soul & Ruslan`, `DJ SOHA`, `La Romi Pa Tu Consu`, `Aleksandr Ribak`, `Remix_2022`, `Elmurod Ziyayev`, `Uzmir & Mira`, `Remix_2021` ]
 
 let music_name = [
     `Davay ne boley`,
